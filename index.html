@@ -24,20 +24,16 @@
     (async function(){
       const footer = `
 <style>
-  .chispa-credit{background:#120b08;color:#e9d2a7;border-top:1px solid rgba(255,226,168,.25);padding:24px 18px;text-align:center;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}
-  .chispa-credit__inner{width:min(1100px,calc(100% - 24px));margin:auto;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
-  .chispa-credit__logo{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:10px 14px;border-radius:18px;background:linear-gradient(135deg,rgba(34,211,238,.16),rgba(132,204,22,.12));border:1px solid rgba(34,211,238,.32);color:#f8ffe9;text-decoration:none;font-weight:950;letter-spacing:.01em;box-shadow:0 12px 34px rgba(34,211,238,.12)}
-  .chispa-credit__mark{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#22d3ee,#84cc16);color:#06140f;font-weight:1000;box-shadow:0 0 18px rgba(34,211,238,.25)}
-  .chispa-credit__brand{font-weight:950}.chispa-credit__brand b{color:#9eff6f}.chispa-credit__text{color:#c9ad7a;font-size:.92rem;line-height:1.35}
-  .chispa-credit__logo:hover{transform:translateY(-1px);filter:brightness(1.08)}
+  .chispa-credit{background:#120b08;color:#e9d2a7;border-top:1px solid rgba(255,226,168,.25);padding:22px 18px;text-align:center;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+  .chispa-credit__inner{width:min(1100px,calc(100% - 24px));margin:auto;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+  .chispa-credit__link{display:inline-flex;align-items:center;justify-content:center;padding:9px 13px;border-radius:999px;background:rgba(255,244,220,.08);border:1px solid rgba(255,226,168,.28);color:#fff4d8;text-decoration:none;font-weight:900;letter-spacing:.01em}
+  .chispa-credit__text{color:#c9ad7a;font-size:.92rem;line-height:1.35}
+  .chispa-credit__link:hover{filter:brightness(1.08);transform:translateY(-1px)}
 </style>
 <footer class="chispa-credit" aria-label="Créditos de digitalización">
   <div class="chispa-credit__inner">
-    <a class="chispa-credit__logo" href="https://educandoconchispa.com" target="_blank" rel="noopener" title="Educando con chIspA">
-      <span class="chispa-credit__mark">✦</span>
-      <span class="chispa-credit__brand">Educando con ch<b>I</b>sp<b>A</b></span>
-    </a>
-    <span class="chispa-credit__text">Digitalización del programa y adaptación web</span>
+    <span class="chispa-credit__text">Digitalización del programa y adaptación web:</span>
+    <a class="chispa-credit__link" href="https://educandoconchispa.com" target="_blank" rel="noopener" title="Educando con chIspA">Educando con chIspA</a>
   </div>
 </footer>`;
       try{
