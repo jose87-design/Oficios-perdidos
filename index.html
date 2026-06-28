@@ -5,18 +5,53 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>XXIV Feria de Oficios Perdidos · Lituénigo</title>
   <meta name="description" content="XXIV Feria de Oficios Perdidos de Lituénigo: programa, mapa de puestos, portada oficial y cómo llegar con Google Maps.">
-  <meta http-equiv="refresh" content="0; url=./index_oficios_lituenigo.html">
   <link rel="canonical" href="./index_oficios_lituenigo.html">
   <style>
-    body{margin:0;min-height:100vh;display:grid;place-items:center;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#fff4dc;color:#24150d;text-align:center;padding:24px}
-    a{display:inline-flex;margin-top:16px;padding:13px 18px;border-radius:999px;background:#8f3f18;color:#fff;text-decoration:none;font-weight:800}
+    html,body{margin:0;min-height:100%;background:#fff4dc;color:#24150d;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+    #loader{min-height:100vh;display:grid;place-items:center;text-align:center;padding:24px}
+    #loader a{display:inline-flex;margin-top:16px;padding:13px 18px;border-radius:999px;background:#8f3f18;color:#fff;text-decoration:none;font-weight:800}
   </style>
 </head>
 <body>
-  <main>
-    <h1>XXIV Feria de Oficios Perdidos · Lituénigo</h1>
-    <p>Redirigiendo a la página final…</p>
-    <a href="./index_oficios_lituenigo.html">Abrir la página</a>
-  </main>
+  <div id="loader">
+    <main>
+      <h1>XXIV Feria de Oficios Perdidos · Lituénigo</h1>
+      <p>Cargando programa digital…</p>
+      <a href="./index_oficios_lituenigo.html">Abrir la página directa</a>
+    </main>
+  </div>
+  <script>
+    (async function(){
+      const footer = `
+<style>
+  .chispa-credit{background:#120b08;color:#e9d2a7;border-top:1px solid rgba(255,226,168,.25);padding:24px 18px;text-align:center;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+  .chispa-credit__inner{width:min(1100px,calc(100% - 24px));margin:auto;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+  .chispa-credit__logo{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:10px 14px;border-radius:18px;background:linear-gradient(135deg,rgba(34,211,238,.16),rgba(132,204,22,.12));border:1px solid rgba(34,211,238,.32);color:#f8ffe9;text-decoration:none;font-weight:950;letter-spacing:.01em;box-shadow:0 12px 34px rgba(34,211,238,.12)}
+  .chispa-credit__mark{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#22d3ee,#84cc16);color:#06140f;font-weight:1000;box-shadow:0 0 18px rgba(34,211,238,.25)}
+  .chispa-credit__brand{font-weight:950}.chispa-credit__brand b{color:#9eff6f}.chispa-credit__text{color:#c9ad7a;font-size:.92rem;line-height:1.35}
+  .chispa-credit__logo:hover{transform:translateY(-1px);filter:brightness(1.08)}
+</style>
+<footer class="chispa-credit" aria-label="Créditos de digitalización">
+  <div class="chispa-credit__inner">
+    <a class="chispa-credit__logo" href="https://educandoconchispa.com" target="_blank" rel="noopener" title="Educando con chIspA">
+      <span class="chispa-credit__mark">✦</span>
+      <span class="chispa-credit__brand">Educando con ch<b>I</b>sp<b>A</b></span>
+    </a>
+    <span class="chispa-credit__text">Digitalización del programa y adaptación web</span>
+  </div>
+</footer>`;
+      try{
+        const response = await fetch('./index_oficios_lituenigo.html', {cache:'no-store'});
+        if(!response.ok) throw new Error('No se pudo cargar la página final');
+        let html = await response.text();
+        html = html.replace('</body>', footer + '\n</body>');
+        document.open();
+        document.write(html);
+        document.close();
+      }catch(error){
+        document.getElementById('loader').innerHTML = '<main><h1>XXIV Feria de Oficios Perdidos · Lituénigo</h1><p>No se ha podido cargar automáticamente.</p><a href="./index_oficios_lituenigo.html">Abrir la página directa</a></main>';
+      }
+    })();
+  </script>
 </body>
 </html>
